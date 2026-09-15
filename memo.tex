@@ -1,0 +1,112 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.62in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,maxbibnames=5]{biblatex}
+\addbibresource{references.bib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\definecolor{ink}{HTML}{17212B}
+\definecolor{muted}{HTML}{5D6975}
+\definecolor{accent}{HTML}{174A72}
+\definecolor{light}{HTML}{EEF4F8}
+\definecolor{green}{HTML}{ECF5EE}
+\color{ink}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.2pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=1pt,topsep=2pt,parsep=0pt}
+\pagestyle{empty}
+\newcommand{\sectionline}[1]{\vspace{2.5pt}{\color{accent}\bfseries\small #1}\par\vspace{1.2pt}\hrule\vspace{2.5pt}}
+
+\begin{document}
+
+{\fontsize{18.5}{20.5}\selectfont\bfseries VA Mortgage Market-Value Conversion Pilot}\par
+\vspace{1pt}
+{\large\color{accent}A limited demonstration to reduce mortgage lock-in without federal principal subsidies}\par
+\vspace{5pt}
+
+\sectionline{Problem}
+Millions of homeowners hold fixed-rate mortgages far below current market rates. When rates rise, the market value of low-coupon mortgage securities falls, but borrowers must still repay the mortgage at full outstanding principal when they sell or refinance. This creates \textbf{mortgage lock-in}: households may avoid moving because doing so requires surrendering valuable below-market financing.
+
+Research on the Danish mortgage system shows that allowing borrowers to repurchase mortgage debt at market value can materially reduce lock-in while having limited effects on equilibrium mortgage rates.\autocite{berger2026,berg2018} Denmark accomplishes this through a simple principle: borrowers may acquire the mortgage bonds corresponding to their debt in the secondary market and deliver them to extinguish an equivalent face amount of mortgage principal.
+
+\sectionline{Proposal}
+Congress should authorize a limited \textbf{VA/Ginnie Mae Market-Value Conversion Pilot} for seasoned, performing fixed-rate VA mortgages.
+
+Under the pilot, a borrower could satisfy an existing VA mortgage either by ordinary cash repayment at par or by purchasing and delivering the prescribed face amount of eligible Ginnie Mae mortgage securities. Ginnie Mae II already links mortgage note rates to related security coupons within a defined spread, providing an existing mortgage-to-security framework on which a pilot could build.\autocite{ginnie24}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.03}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.58\linewidth} >{\raggedleft\arraybackslash}p{0.27\linewidth}}
+\toprule
+\textbf{Illustrative transaction} & \\
+\midrule
+Remaining VA mortgage principal & \$350,000 \\
+Existing mortgage rate & 2.25\% \\
+Relevant low-coupon Ginnie security & 80\% of face \\
+Cost to acquire \$350,000 face & \textbf{\$280,000} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A lender could finance the \$280,000 security purchase, deliver the securities through the Ginnie settlement system, extinguish the \$350,000 old mortgage, and issue a new approximately \$280,000 VA mortgage at the current market rate. The roughly \$70,000 reduction in mortgage principal requires \textbf{no federal principal subsidy}; it reflects the lower market value of the existing low-coupon mortgage claim after rates have risen.
+
+\sectionline{Why VA/Ginnie is a good pilot}
+VA offers a controlled test environment: federal underwriting standards and guarantees are already established; VA loans are securitized predominantly through Ginnie Mae; private lenders and servicers already administer VA refinancing; and Congress can narrowly waive existing VA refinance rules that assume a refinance should lower the borrower's interest rate.\autocite{usc3709}
+
+The incumbent servicer could facilitate the conversion and retain servicing of the replacement mortgage, limiting disruption to mortgage-servicing-right values. Competing lenders should remain free to offer conversions.
+
+\sectionline{Pilot safeguards and evaluation}
+The pilot could be limited to \textbf{10,000--20,000 loans or a fixed aggregate UPB}, initially targeting performing 2020--2022 fixed-rate VA mortgages materially below current rates. Cash-out would be prohibited: replacement principal could not exceed the cost of acquiring the required securities plus reasonable transaction expenses.
+
+Federal appropriations would fund only implementation, borrower transaction-cost assistance, independent evaluation, and a limited operational-risk reserve. Ordinary interest-rate and securities-market risk would remain private.
+
+Evaluation should measure \textbf{(1)} borrower mobility and home sales; \textbf{(2)} Ginnie MBS liquidity, specified-pool pricing, prepayment speeds and servicing-right values; and \textbf{(3)} settlement accuracy, borrower costs and scalability. If market functioning remains stable and mobility improves, Congress could consider expansion to FHA/Ginnie and ultimately Fannie Mae/Freddie Mac mortgages.
+
+\vfill
+\begin{center}
+\fcolorbox{accent}{light}{\parbox{0.92\linewidth}{\centering\textbf{Core principle:} A borrower should be able to purchase and retire the market-traded mortgage claim corresponding to his or her own debt.}}
+\end{center}
+
+\newpage
+
+{\fontsize{16.5}{18.5}\selectfont\bfseries Appendix A: Transaction Structure}\par
+\vspace{2pt}
+{\color{muted}\small Conceptual comparison of today's U.S. payoff mechanics with a VA/Ginnie market-value conversion.}\par
+\vspace{9pt}
+
+\input{figures/transaction_flow.tex}
+
+\vspace{7pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.58\linewidth} >{\raggedleft\arraybackslash}p{0.22\linewidth}}
+\toprule
+\textbf{Illustrative result} & \\
+\midrule
+Old mortgage principal & \$350,000 \\
+Market cost of required low-coupon MBS face & \$280,000 \\
+Replacement mortgage principal & \textbf{\textasciitilde\$280,000} \\
+Federal principal subsidy & \textbf{\$0} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{5pt}
+\fcolorbox{accent}{light}{\parbox{0.92\linewidth}{\textbf{Interpretation.} The principal reduction is not taxpayer-funded debt forgiveness. It follows from allowing the borrower or refinancing lender to acquire the low-coupon mortgage claim at its market price and deliver the prescribed face amount to retire the corresponding mortgage debt. Pooling can remain in place for liquidity and privacy; the new element is a contractual and settlement right linking delivery of pooled mortgage securities to retirement of individual mortgage principal.}}
+
+\vfill
+{\fontsize{7.4}{8.4}\selectfont
+\printbibliography[heading=none]
+}
+
+\end{document}
