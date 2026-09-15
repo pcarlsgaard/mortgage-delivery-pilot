@@ -1,0 +1,31 @@
+\begin{center}
+\begin{tikzpicture}[
+  node distance=7.2mm and 13mm,
+  box/.style={draw=accent, rounded corners=2pt, very thick, minimum width=5.05cm, minimum height=0.92cm, align=center, fill=light, text width=4.65cm, font=\small},
+  boxg/.style={draw=accent, rounded corners=2pt, very thick, minimum width=5.05cm, minimum height=0.92cm, align=center, fill=green, text width=4.65cm, font=\small},
+  arr/.style={-{Latex[length=2.5mm]}, very thick, draw=muted},
+  label/.style={font=\bfseries\small, text=accent}
+]
+
+\node[label] (lhslabel) {CURRENT U.S. SYSTEM};
+\node[box, below=3.5mm of lhslabel] (old1) {Borrower owes\\\textbf{\$350,000 @ 2.25\%}};
+\node[box, below=of old1] (old2) {To sell or refinance, borrower/new lender sends\\\textbf{about \$350,000 cash payoff}};
+\node[box, below=of old2] (old3) {Old mortgage is cancelled; pooled MBS balance runs off};
+\node[box, below=of old3] (old4) {Low-coupon MBS investor receives\\\textbf{par principal on prepaid balance}};
+\draw[arr] (old1) -- (old2);
+\draw[arr] (old2) -- (old3);
+\draw[arr] (old3) -- (old4);
+
+\node[label, right=20mm of lhslabel] (rhslabel) {PROPOSED VA/GINNIE PILOT};
+\node[boxg, below=3.5mm of rhslabel] (new1) {Borrower owes\\\textbf{\$350,000 @ 2.25\%}};
+\node[boxg, below=of new1] (new2) {Relevant Ginnie security trades at 80\\Refi lender buys \textbf{\$350,000 face for \$280,000 cash}};
+\node[boxg, below=of new2] (new3) {Required security exposure is delivered into the Ginnie settlement/cancellation mechanism};
+\node[boxg, below=of new3] (new4) {\textbf{\$350,000 old VA mortgage extinguished}\\Corresponding MBS exposure retired};
+\node[boxg, below=of new4] (new5) {New VA mortgage issued\\\textbf{approximately \$280,000 @ current rate}\\Same servicer may retain servicing};
+\draw[arr] (new1) -- (new2);
+\draw[arr] (new2) -- (new3);
+\draw[arr] (new3) -- (new4);
+\draw[arr] (new4) -- (new5);
+
+\end{tikzpicture}
+\end{center}
