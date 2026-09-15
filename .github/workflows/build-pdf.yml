@@ -1,0 +1,20 @@
+name: Build policy memo PDF
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: memo.tex
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: va-mortgage-market-value-conversion-pilot
+          path: memo.pdf
