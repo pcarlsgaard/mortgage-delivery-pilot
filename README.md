@@ -9,6 +9,17 @@ Working policy memo proposing a limited VA/Ginnie Mae pilot for Danish-style mor
 - `references.bib` - BibTeX/Biber references
 - `Makefile` - local build helper
 - `.github/workflows/build-pdf.yml` - compiles the PDF on every push / pull request
+- `web/index.html` - standalone interactive prototype for the educational web app
+
+## Interactive prototype
+
+`web/index.html` prototypes the first two teaching scenes for **Par vs. Market**:
+
+1. Compare a $100,000, 2.25% old mortgage claim with an $80,000, 4.00% new mortgage over the same 30-year remaining term.
+2. Visualize why the two payment streams are nearly identical in this calibration and why the old claim prices near $80,000 when the market-required return rises to 4%.
+3. Animate the same future dollars through a simplified discounting lens before bridging to the par-payoff versus market-value refinancing question.
+
+The prototype is deliberately dependency-free: open `web/index.html` directly in a browser or serve the repository with any static file server.
 
 ## Build locally
 
@@ -33,3 +44,4 @@ make clean
 3. Preserve pooled MBS/TBA liquidity; do not require individual household mortgages to trade publicly.
 4. Separate market-derived principal reduction from any federal subsidy.
 5. Treat the VA/Ginnie proposal as a bounded demonstration that can be evaluated before broader adoption.
+6. In the web app, separate operational mortgage plumbing from economic ownership and market pricing.
